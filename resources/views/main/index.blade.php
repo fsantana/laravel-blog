@@ -12,7 +12,7 @@
                         {{ $post->subtitle }}
                     </h3>
                 </a>
-                <p class="post-meta">Enviado por <a href="#">{{ $post->author }}</a> em {{ $post->date }}</p>
+                <p class="post-meta">Enviado por <a href="#">{{ $post->author }}</a> em {{ $post->updated_at }}</p>
             </div>
             <hr>
             @endforeach

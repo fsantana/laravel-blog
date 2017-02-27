@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,7 +14,19 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
+        factory('App\User')->create(
+            [
+                'name' => 'Fernando',
+                'email' => 'fernandosantanajr@gmail.com',
+                'password' => bcrypt('123456'),
+                'remember_token' => str_random(10)
+            ]
+        );
+
+
         // $this->call(UserTableSeeder::class);
+        $this->call(PostsTableSeeder::class);
+        $this->call(TagTableSeeder::class);
 
         Model::reguard();
     }
